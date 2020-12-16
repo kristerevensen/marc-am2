@@ -41,7 +41,6 @@ class ClickController extends Controller
         } else {
             $data['platform'] = "desktop";
         }
-        dd($data);
 
         $click = new Click();
         $click->user_agent = $data['user_agent'];

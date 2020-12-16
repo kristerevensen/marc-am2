@@ -21,10 +21,6 @@ class CreateClicksTable extends Migration
             $table->string('platform')->nullable();
             $table->string('link_token')->nullable()->key();
             $table->timestamps();
-            $table->foreign('link_token')
-                    ->references('link_token')
-                    ->on('campaigns_links')
-                    ->onDelete('cascade');
         });
     }
 
