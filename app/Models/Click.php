@@ -10,6 +10,8 @@ class Click extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'link_token';
+
     public function get_redirect($id)
     {
         return DB::table('campaigns_links')
@@ -21,7 +23,7 @@ class Click extends Model
     public function check_token($id){
         $res = DB::table('campaigns_links')
         ->where('link_token',$id)
-        ->pluck('tagged_url');
+        ->get();
 
         if($res) {
             return true;

@@ -42,7 +42,7 @@ class ClickController extends Controller
             $data['platform'] = "desktop";
         }
         $click = new Click();
-        if(!$click->check_token($id)) {
+        if(Click::where('link_token',$id)->isEmpty()) {
             redirect('https://marcam.tech',301)->send();
         }
         $click = new Click();
