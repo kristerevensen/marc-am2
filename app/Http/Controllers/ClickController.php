@@ -18,7 +18,7 @@ class ClickController extends Controller
         
         if(!$id) {
             dd('no id');
-            redirect('https://marcam.tech')->send();
+            redirect('https://marcam.tech',301)->send();
         } else {
            
             $this->save($id);
@@ -60,10 +60,10 @@ class ClickController extends Controller
             if($redirectURL != null) {
                 redirect($redirectURL)->send();
             } else {
-                redirect('https://marcam.tech')->send();
+                redirect('https://marcam.tech',301)->send();
             }
         } else {
-            redirect('https://marcam.tech')->send();
+            redirect('https://marcam.tech',301)->send();
         }
        
        
