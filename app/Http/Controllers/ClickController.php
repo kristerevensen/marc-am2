@@ -53,7 +53,7 @@ class ClickController extends Controller
         
         $camp = new Click();
         $redirect = $camp->get_redirect($id);
-        dd($redirect);
+        //dd($redirect);
         if (!$redirect->isEmpty()) { 
             $redirectURL = $redirect[0];
     
