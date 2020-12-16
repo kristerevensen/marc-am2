@@ -43,7 +43,7 @@ class ClickController extends Controller
         }
         $click = new Click();
         if(!$click->check_token($id)) {
-            redirect('https://marcam.tech',301)->send();
+            redirect('https://marcam.tech/error/404.html',301)->send();
         }
         $click = new Click();
         $click->user_agent = $data['user_agent'];
