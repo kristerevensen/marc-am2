@@ -17,4 +17,16 @@ class Click extends Model
                 ->pluck('tagged_url');
 
     }
+
+    public function check_token($id){
+        $res = DB::table('campaigns_links')
+        ->where('link_token',$id)
+        ->pluck('tagged_url');
+
+        if($res) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
