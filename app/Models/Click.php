@@ -22,13 +22,13 @@ class Click extends Model
 
     public function check_token($id){
         $res = DB::table('campaigns_links')
-        ->where('link_token',$id)
+        ->whereIn('link_token',[$id])
         ->get();
 
-        if($res) {
-            return true;
-        } else {
+        if($res->isEmpty()) {
             return false;
+        } else {
+            return true;
         }
     }
 }
